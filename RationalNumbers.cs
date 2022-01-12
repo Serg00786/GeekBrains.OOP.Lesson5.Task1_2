@@ -85,6 +85,15 @@ namespace GeekBrains.OOP.Lesson5.Task1_2
         {
             return base.ToString();
         }
+        public static implicit operator float(RationalNumbers rational)
+        {
+            
+                return rational.Nominator/rational.Denominator;
+        }
+        public static explicit operator int (RationalNumbers rational)
+        {
+            return (int)rational.Nominator;
+        }
 
 
 
