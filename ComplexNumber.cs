@@ -36,23 +36,49 @@ namespace GeekBrains.OOP.Lesson5.Task1_2
         public static bool operator ==(ComplexNumber a, ComplexNumber b)
         {
             
-            bool Result = ReferenceEquals(a, b);
-            return Result;
+            bool Result1 = ReferenceEquals(a, null);
+            bool Result2 = ReferenceEquals(b,null);
+
+            if (a.i == b.i && a.r == b.r && Result1==false)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public static bool operator !=(ComplexNumber a, ComplexNumber b)
         {
-            return false;
-        }
+            bool Result1 = ReferenceEquals(a, null);
+            bool Result2 = ReferenceEquals(b, null);
 
-        public override bool Equals(object obj)
+            if (a.i != b.i || a.r != b.r || Result1== true || Result2==true)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public override bool Equals(object obj) => this.Equals(obj as ComplexNumber);
+        public bool Equals(ComplexNumber a)
         {
-            return false;
+
+            
+            return this.i == a.i && this.r == a.r;
         }
 
         public override int GetHashCode()
         {
             return base.GetHashCode();
+        }
+
+        public override string ToString()
+        {
+            return "new ToString()";
         }
 
 
